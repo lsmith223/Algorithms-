@@ -19,11 +19,12 @@ end = time.time()
 runtime = (end - start) * 1000
 f = open("fibOutput.txt", "w")
 f.write(f"Non-recursive fibonacci Runtime:\n")
-f.write(f"runtime = {runtime} milliseconds")
+f.write(f"runtime = {runtime} milliseconds\n")
 f.close()
 
 f = open("fibOutput.txt", "r")
 print(f.read())
 f.close()
+
 
 
