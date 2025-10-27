@@ -6,22 +6,19 @@ Description: Group Project 1, Non-recursive fibonacci program
 import time
 
 #Non recursively iterates over 
-def main():
-    start = time.time()  
-
+def nonRecFib(n): 
     a, b = 0, 1
-    for i in range(40):
+    for i in range(n):
         #print(a)
         a, b = b, a + b
+    return a 
 
-    end = time.time()  
+start = time.time() 
+nonRecFib(40)
+end = time.time()
+runtime = (end - start) * 1000
+f = open("fibOutput.txt", "w")
+f.write(f"Non-recursive fibonacci Runtime:\n")
+f.write(f"runtime = {runtime} milliseconds")
+f.close()
 
-    runtime = (end - start) * 1000
-    
-    f = open("fibOutput.txt", "w")
-    f.write("Non-recursive fibonacci Runtime:\n")
-    f.write(runtime)
-    f.close()
-
-
-main()
