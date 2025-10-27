@@ -22,3 +22,8 @@ f.write(f"Non-recursive fibonacci Runtime:\n")
 f.write(f"runtime = {runtime} milliseconds")
 f.close()
 
+f = open("fibOutput.txt", "r")
+print(f.read())
+f.close()
+
+
