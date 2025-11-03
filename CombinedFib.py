@@ -5,21 +5,22 @@ Authors: DAA Group 7
 """
 import time
 
-
-
-
-
 # Non recursively iterates over
 def nonRecurFib(n):
 
     runtime=0
 
+    if n == 0 or n == 1:
+        return 1, 0
+
     a, b = 0, 1
     for i in range(n):
         #print(a)
-        a, b = b, a + b
+        a, b = b, a+b
 
-    return a, runtime
+    runtime=b-1 #This is the additions needed to find the answer
+
+    return b, runtime
 
 
 
@@ -35,9 +36,9 @@ def nonRecurFib_Main():
     f = open("Non_recursive_fibOutput.txt", "w")
     f.write("Pos  Fibonacci  Runtime\n")
     # calculates fibonacci for input n = 0-50, and displays the position(n), the fibonacci, and the runtime for each n
-    for n in range(10):
+    for n in range(51):
         pos = pos + 1
-        if n == 10:
+        if n == 40:
             # finds execution time of n = 40 only and outputs it
             start = time.time()
             fibValue, runtime = nonRecurFib(n)
@@ -115,3 +116,5 @@ def recurFib_Main():
     f.close()
 
 nonRecurFib_Main()
+#print(nonRecurFib(10))
+recurFib_Main()
